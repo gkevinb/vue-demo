@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "copy-dist": "copyfiles 'dist/**/*' './docs' -u 1",
+    "clean": "rimraf dist && rimraf docs",
+    "deploy": "npm run clean && npm run build && npm run copy-dist"
   },
   "dependencies": {
     "core-js": "^3.6.4",
